@@ -13,4 +13,6 @@ To use this program, you will require the following:
   
   1. download python 3.X.X at https://www.python.org/downloads/
   2. download both main.py and crane.py
-  3. edit the input_configuration and process configuration as desired
+  3. open the folder containing the .py files downloaded in step 2
+  4. open a cmd or terminal in the current folder and run the command: "python3 main.py"
+  5. Follow the instructions given by the program
