@@ -1,4 +1,5 @@
 import crane
+import random
 
 
 def compute_input(crane, input_config, process_config):
@@ -85,6 +86,14 @@ def move_crane(crane, distance, generated_process):
             distance += 1
 
 
+def shuffle_stacks(input_config):
+    shuffled = list(input_config)
+    random.shuffle(shuffled)
+
+    output = ""
+    return output.join(shuffled)
+
+
 if __name__ == "__main__":
     crane = crane.Crane()
     input_config = "3121401"
@@ -92,3 +101,4 @@ if __name__ == "__main__":
     output_config = "2131401"
     print(compute_input(crane, input_config, process_config))
     print(compute_process(crane, input_config, output_config))
+    print(shuffle_stacks(input_config))
