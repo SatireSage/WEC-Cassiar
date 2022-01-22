@@ -27,12 +27,13 @@ class Crane:
     def drop(self):
         """ drops a box onto the stack associated with the objects stack index """
         if self.stacks[self.stackIdx] == 4 or (not self.carryingBox):
-            print("Error dropping box onto the current stack " + str(self.carryingBox) + str(self.stacks[self.stackIdx]))
+            print("Error dropping box onto the current stack ")
             return
         self.stacks[self.stackIdx] += 1
         self.carryingBox = False
 
     def initialize_stacks(self, config):
+        self.stackIdx = 0
         for i in range(len(config)):
             num_boxes = int(config[i])
             while num_boxes > 4 or num_boxes < 0:
