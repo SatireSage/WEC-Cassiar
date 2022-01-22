@@ -2,7 +2,7 @@ import crane
 import random
 
 
-def compute_input(crane, input_config, process_config):
+def compute_output(crane, input_config, process_config):
     """ sample input: 3121401, 32222413140
         1: left
         2: right
@@ -99,6 +99,24 @@ if __name__ == "__main__":
     input_config = "3121401"
     process_config = "32222413140"
     output_config = "2131401"
-    print(compute_input(crane, input_config, process_config))
-    print(compute_process(crane, input_config, output_config))
-    print(shuffle_stacks(input_config))
+
+    program_mode = input("Please select the corresponding mode of program:"
+                         "\n 1 = Level 1A: creating output from input and process"
+                         "\n 2 = Level 1B: creating process from input and output"
+                         "\n 3 = Level 1C: creating shuffled output from input\n")
+    if program_mode == '1':
+        input_config = input("Enter the input configuration in a numerical string, no spaces. Note that the max "
+                             "number is 4 boxes\n")
+        process_config = input("Enter the process configuration in a numerical string, no spaces.\n")
+        print("The output configuration is " + compute_output(crane, input_config, process_config))
+    elif program_mode == '2':
+        input_config = input("Enter the input configuration in a numerical string, no spaces. Note that the max "
+                             "number is 4 boxes\n")
+        output_config = input("Enter the input configuration in a numerical string, no spaces. Note that the max "
+                              "number is 4 boxes\n")
+        print("The process configuration is " + compute_process(crane, input_config, output_config))
+    elif program_mode == '3':
+        input_config = input("Enter the input configuration in a numerical string, no spaces. Note that the max "
+                             "number is 4 boxes\n")
+        print(shuffle_stacks(input_config))
+
